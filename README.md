@@ -28,6 +28,8 @@ Usage
 The potion tracker will be automatically displayed upon starting a
 Horrific Visions instance (after talking to Wrathion in the entrance
 room and actually entering the Vision) and will be hidden upon leaving.
+If needed, you can manually toggle the tracker on or off with the `/hpt`
+chat command.
 
 When you first drink a potion, the tracker will detect its effect and
 update to show the effect of each potion.  (There are only five possible

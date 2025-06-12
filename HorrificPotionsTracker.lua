@@ -386,9 +386,11 @@ function HorrificPotionsTracker:CheckMap()
     or map == 2403  -- Orgrimmar (11.1 revisit)
     or map == 2404  -- Stormwind (11.1 revisit)
     then
+        self:Toggle(true)
         self:Show()
         self:Update()
     else
+        self:Toggle(false)
         self:Hide()
     end
 end
@@ -430,12 +432,38 @@ function HorrificPotionsTracker:Update()
     end
 end
 
+-- Pass state=true to force the window on, false to force it off,
+-- nil to toggle the current state.
+function HorrificPotionsTracker:Toggle(state)
+    if state == nil then
+        state = not self:IsShown()
+    end
+    if state then
+        self:Show()
+        self:Update()
+    else
+        self:Hide()
+    end
+end
+
 ------------------------------------------------------------------------
 
 local tracker
 
+local function SlashCmdHandler(arg)
+    if not arg or arg == "" then
+        tracker:Toggle()
+    end
+end
+
 local function init()
     tracker = HorrificPotionsTracker()
+
+    SLASH_HPT1 = "/hpt"
+    SlashCmdList["HPT"] = SlashCmdHandler
+    SlashCmdHelp = SlashCmdHelp or {}
+    SlashCmdHelp["HPT"] = {
+        help = "Toggle the Horrific Potions Tracker display on or off."}
 end
 
 local frame = CreateFrame("Frame")
