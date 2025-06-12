@@ -1,7 +1,7 @@
 ## Interface: 110105
 ## Title: Horrific Potions Tracker
 ## Author: vaxherd
-## Version: 1
+## Version: 1.0
 ## Category: Expansion Features
 ## Category-deDE: Erweiterungsfeatures
 ## Category-esES: Características
@@ -13,6 +13,7 @@
 ## Category-ruRU: Особый контент
 ## Category-zhCN: 特色更新
 ## Category-zhTW: 資料片特色
+## IconTexture: Interface/AddOns/HorrificPotionsTracker/textures/icon.png
 
 _class.lua
 _frame.lua
