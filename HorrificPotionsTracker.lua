@@ -43,14 +43,24 @@ local TYPE_PLAYER = 0x00000400
 local HORRIFIC_POTION_COLORS = {
     -- These must be capitalized to match the "Vial of Mysterious X Liquid"
     -- spell name.  Obviously not l10n-safe.
-    ["Red"] = {1, 0.3, 0.3},
-    ["Green"] = {0.3, 1, 0.3},
-    ["Blue"] = {0.2, 0.6, 1},
-    ["Purple"] = {0.7, 0.4, 0.85},
-    ["Black"] = {0.6, 0.6, 0.6},
+    Red = {1, 0.3, 0.3},
+    Green = {0.3, 1, 0.3},
+    Blue = {0.2, 0.6, 1},
+    Purple = {0.7, 0.4, 0.85},
+    Black = {0.6, 0.6, 0.6},
 }
 local HORRIFIC_POTION_COLOR_ORDER = {"Red", "Green", "Blue", "Purple", "Black"}
 local HORRIFIC_POTION_TIMER_WIDTH = 40  -- Width of the time bars.
+
+-- Mapping from color names to object IDs.  Not currently used; would
+-- probably be useful in localization.
+local HORRIFIC_POTION_OBJECTS = {
+    Red = 341341,
+    Green = 341339,
+    Blue = 341338,
+    Purple = 341340,
+    Black = 341337,
+}
 
 ------------------------------------------------------------------------
 
