@@ -274,6 +274,7 @@ function HorrificPotionsTracker:__constructor()
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("ZONE_CHANGED")
     self:RegisterEvent("ZONE_CHANGED_INDOORS")
+    self:RegisterEvent("MINIMAP_UPDATE_ZOOM")
     self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
     self:RegisterEvent("SPELL_UPDATE_COOLDOWN")
     self:RegisterUnitEvent("UNIT_AURA", "player")
@@ -307,7 +308,9 @@ function HorrificPotionsTracker:OnEvent(event, ...)
         self:Recenter()
         self.spicy_color = nil
         self:CheckMap()
-    elseif event == "ZONE_CHANGED" or event == "ZONE_CHANGED_INDOORS" then
+    elseif (event == "ZONE_CHANGED" or
+            event == "ZONE_CHANGED_INDOORS" or
+            event == "MINIMAP_UPDATE_ZOOM") then
         self:CheckMap()
     elseif event == "SPELL_UPDATE_COOLDOWN" then
         local spell = ...
